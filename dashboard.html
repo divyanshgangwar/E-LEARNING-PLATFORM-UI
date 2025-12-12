@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Dashboard — Progress</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand"><div class="logo">EL</div><div><div style="font-weight:800">LearnIt</div><div class="small">Interactive e-learning</div></div></div>
+      <nav class="nav">
+        <a href="index.html">Courses</a>
+        <a href="dashboard.html">Dashboard</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <h1 style="margin-bottom:6px">Your Dashboard</h1>
+        <div class="small">Track progress across enrolled courses</div>
+
+        <div style="margin-top:18px" id="dashboardArea" class="dashboard-grid">
+          <div id="dashboardLeft">
+            <!-- list of enrolled courses -->
+            <div id="enrolledList"></div>
+          </div>
+          <aside id="dashboardRight">
+            <div class="summary-card card">
+              <h3>Summary</h3>
+              <div class="small" id="summaryText">No data yet</div>
+            </div>
+          </aside>
+        </div>
+
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      renderDashboard();
+    });
+  </script>
+</body>
+</html>

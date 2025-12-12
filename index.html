@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>E-Learning — Courses</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <div class="brand">
+        <div class="logo">EL</div>
+        <div>
+          <div style="font-weight:800">LearnIt</div>
+          <div class="small">Interactive e-learning</div>
+        </div>
+      </div>
+
+      <nav class="nav">
+        <a href="index.html">Courses</a>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="#">Sign In</a>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <div style="display:flex;justify-content:space-between;align-items:center">
+          <div>
+            <h1 style="margin:0">Available Courses</h1>
+            <div class="small">Browse courses and track progress</div>
+          </div>
+          <div>
+            <button class="btn" id="refreshBtn">Refresh</button>
+          </div>
+        </div>
+
+        <div id="coursesGrid" class="grid" aria-live="polite"></div>
+      </section>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+  <script>
+    // on the index page only: render course list
+    document.addEventListener('DOMContentLoaded', () => {
+      renderCourseList();
+      document.getElementById('refreshBtn').addEventListener('click', renderCourseList);
+    });
+  </script>
+</body>
+</html>
